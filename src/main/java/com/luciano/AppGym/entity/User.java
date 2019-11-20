@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -28,17 +29,27 @@ public class User implements Serializable{
 	private Long id;
 	
 	@Column 
+	@NotBlank(message="No puede estar vacio")
 	private String firstName;
+	
 	@Column 
+	@NotBlank(message="No puede estar vacio")
 	private String lastName;
+	
 	@Column(unique = true) 
+	@NotBlank(message="No puede estar vacio")
 	private String email;
+	
 	@Column(unique = true) 
+	@NotBlank(message="No puede estar vacio")
 	private String username;
+	
 	@Column
+	@NotBlank(message="No puede estar vacio")
 	private String password;
 	
-	@Transient 
+	@Transient
+	@NotBlank(message="No puede estar vacio")
 	private String confirmPassword;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
