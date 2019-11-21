@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.luciano.AppGym.entity.User;
@@ -60,5 +61,16 @@ public class UserController {
 		model.addAttribute("roles",roleRepository.findAll());
 		return "user-form/user-view";
 	}
-	
+	@GetMapping("/editUser/{id}")
+	public String getEditUserForm(Model model, @PathVariable(name="id")Long id) throws Exception {
+		User userToEdit= userService.getUserById(id);
+		
+		model.addAttribute("userForm", userToEdit);
+		model.addAttribute("userList", userService.getAllUsers());
+		model.addAttribute("roles",roleRepository.findAll());
+		model.addAttribute("formTab","active");
+		model.addAttribute("editMode","true");
+		
+		return "user-form/user-view";
+	}
 }

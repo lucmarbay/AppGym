@@ -49,7 +49,7 @@ public class User implements Serializable{
 	private String password;
 	
 	@Transient
-	@NotBlank(message="No puede estar vacio")
+	
 	private String confirmPassword;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
