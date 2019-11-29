@@ -2,6 +2,7 @@ package com.luciano.AppGym.service;
 
 import javax.validation.Valid;
 
+import com.luciano.AppGym.dto.ChangePasswordForm;
 import com.luciano.AppGym.entity.User;
 
 public interface UserService {
@@ -13,5 +14,9 @@ public interface UserService {
 	public User getUserById(Long id) throws Exception;
 
 	public User updateUser(User user) throws Exception;
+	
+	public void deleteUser(Long id) throws Exception;
+	
+	public User changePassword(ChangePasswordForm form) throws Exception;
 
 }
