@@ -48,8 +48,7 @@ public class User implements Serializable{
 	@NotBlank(message="No puede estar vacio")
 	private String password;
 	
-	@Transient
-	
+	@Transient	
 	private String confirmPassword;
 	
 	@ManyToMany(fetch = FetchType.LAZY)
