@@ -1,2 +1,48 @@
-<div>
+<div class="table-responsive">
+	<table id="userGym"
+		class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nombre del ejercicio</th>
+				<th scope="col">Numero de series</th>
+				<th scope="col">Numero de repeticiones</th>
+				<th scope="col">Descanso entre series</th>
+				<th scope="col">Peso minimo</th>
+				<th scope="col">Peso maximo</th>
+				
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user: ${userList}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.firstName}"></td>
+				<td th:text="${user.lastName}"></td>
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.email}"></td>
+				<td><span th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" >
+						<a href="#" th:href="@{'/editUser/'+ ${user.id}}"><i
+							class="fas fa-edit"></i></a>
+				</span> <span th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}" >
+						| <a href="#"
+						th:onclick="'javascript:confirmDelete(\''+ ${user.id} +'\');'"><i
+							class="fas fa-user-times"></i></a>
+				</span></td>
+			</tr>
+		</tbody>
+	</table>
+
 </div>
+
+<script type="text/javascript">
+function confirmDelete(id){
+	$('#deleteModal').modal('show');
+	$("#userIdHiddenInput").val(id);
+}
+
+function deleteUser(){
+	var id = $("#userIdHiddenInput").val();
+    window.location = "deleteUser/"+id;
+}
+</script>

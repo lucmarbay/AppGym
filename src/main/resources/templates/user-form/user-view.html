@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>User Information and Form</title>
+<meta charset="utf-8" />
+	<title>AppGym</title>
 	
 	<!--JQUERY-->
 	<script
@@ -43,7 +44,7 @@
 	<div class="mx-auto col-sm-12 main-section" id="myTab" role="tablist">
 		<ul class="nav nav-tabs justify-content-end">
 			<li class="nav-item">
-			<a class="nav-link" th:classappend=" ${gymTab}" id="gym-tab" data-toggle="tab" href="#gym" role="tab" aria-controls="gym" aria-selected="false">Gym</a>				   	
+			<a class="nav-link" th:classappend=" ${gymTab}" id="gym-tab" data-toggle="tab" href="#gym" role="tab" aria-controls="gym" aria-selected="true">Gym</a>				   	
 			</li>
 			<li class="nav-item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
 			<a class="nav-link" th:classappend=" ${listTab}" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
