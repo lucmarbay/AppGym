@@ -1,4 +1,4 @@
-package com.luciano.AppGym.service;
+package com.luciano.crud.service;
 
 import java.util.Optional;
 
@@ -12,11 +12,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.luciano.AppGym.exception.CustomeFieldValidationException;
-import com.luciano.AppGym.exception.UsernameOrIdNotFound;
-import com.luciano.AppGym.dto.ChangePasswordForm;
-import com.luciano.AppGym.entity.User;
-import com.luciano.AppGym.repository.UserRepository;
+import com.luciano.crud.dto.ChangePasswordForm;
+import com.luciano.crud.entity.User;
+import com.luciano.crud.exception.CustomeFieldValidationException;
+import com.luciano.crud.exception.UsernameOrIdNotFound;
+import com.luciano.crud.repository.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService{

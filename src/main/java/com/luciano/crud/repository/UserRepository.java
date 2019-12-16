@@ -1,11 +1,11 @@
-package com.luciano.AppGym.repository;
+package com.luciano.crud.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.luciano.AppGym.entity.User;
+import com.luciano.crud.entity.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {

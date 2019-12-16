@@ -1,4 +1,4 @@
-package com.luciano.AppGym.controller;
+package com.luciano.crud.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,13 +23,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.luciano.AppGym.exception.CustomeFieldValidationException;
-import com.luciano.AppGym.exception.UsernameOrIdNotFound;
-import com.luciano.AppGym.dto.ChangePasswordForm;
-import com.luciano.AppGym.entity.Role;
-import com.luciano.AppGym.entity.User;
-import com.luciano.AppGym.repository.RoleRepository;
-import com.luciano.AppGym.service.UserService;
+import com.luciano.crud.dto.ChangePasswordForm;
+import com.luciano.crud.entity.Role;
+import com.luciano.crud.entity.User;
+import com.luciano.crud.exception.CustomeFieldValidationException;
+import com.luciano.crud.exception.UsernameOrIdNotFound;
+import com.luciano.crud.repository.RoleRepository;
+import com.luciano.crud.service.UserService;
 
 @Controller
 public class UserController {

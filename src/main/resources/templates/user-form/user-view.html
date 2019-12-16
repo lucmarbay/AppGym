@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8" />
-	<title>AppGym</title>
+<meta charset="utf8" />
+	<title>CRUD</title>
 	
 	<!--JQUERY-->
 	<script
@@ -43,10 +43,10 @@
 	<div class="container">
 	<div class="mx-auto col-sm-12 main-section" id="myTab" role="tablist">
 		<ul class="nav nav-tabs justify-content-end">
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 			<a class="nav-link" th:classappend=" ${gymTab}" id="gym-tab" data-toggle="tab" href="#gym" role="tab" aria-controls="gym" aria-selected="true">Gym</a>				   	
-			</li>
-			<li class="nav-item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+			</li> -->
+			<li class="nav-item">
 			<a class="nav-link" th:classappend=" ${listTab}" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
 			</li>
 			<li class="nav-item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
@@ -57,7 +57,7 @@
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show" th:classappend=" ${gymTab}" id="gym" role="tabpanel" aria-labelledby="gym-tab">
+			<!-- <div class="tab-pane fade show" th:classappend=" ${gymTab}" id="gym" role="tabpanel" aria-labelledby="gym-tab">
 				<div class="card">
 					<div class="card-header">
 						<h4>Gym</h4>
@@ -66,7 +66,7 @@
 						<div th:include="user-form/user-gym.html" th:remove="tag"></div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			
 			<div class="tab-pane fade show" th:classappend=" ${listTab}" id="list" role="tabpanel" aria-labelledby="list-tab">
 				<div class="card">

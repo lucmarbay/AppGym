@@ -1,4 +1,4 @@
-package com.luciano.AppGym;
+package com.luciano.crud;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

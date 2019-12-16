@@ -1,4 +1,4 @@
-package com.luciano.AppGym;
+package com.luciano.crud;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.luciano.AppGym.service.UserDetailsServiceImpl;
+import com.luciano.crud.service.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity

@@ -1,4 +1,4 @@
-package com.luciano.AppGym.exception;
+package com.luciano.crud.exception;
 
 public class UsernameOrIdNotFound extends Exception {
 

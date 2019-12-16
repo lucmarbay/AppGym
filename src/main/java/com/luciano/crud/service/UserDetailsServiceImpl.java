@@ -1,4 +1,4 @@
-package com.luciano.AppGym.service;
+package com.luciano.crud.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,8 +13,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luciano.AppGym.entity.Role;
-import com.luciano.AppGym.repository.UserRepository;
+import com.luciano.crud.entity.Role;
+import com.luciano.crud.repository.UserRepository;
 
 @Service
 @Transactional
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		com.luciano.AppGym.entity.User appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Login Username Invalido."));
+		com.luciano.crud.entity.User appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Login Username Invalido."));
 		
 		Set<GrantedAuthority> grantList = new HashSet<GrantedAuthority>(); 
 		for (Role role: appUser.getRoles()) {

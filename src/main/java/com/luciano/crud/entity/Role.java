@@ -1,4 +1,4 @@
-package com.luciano.AppGym.entity;
+package com.luciano.crud.entity;
 
 import java.io.Serializable;
 

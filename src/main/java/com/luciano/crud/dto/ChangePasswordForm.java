@@ -1,4 +1,4 @@
-package com.luciano.AppGym.dto;
+package com.luciano.crud.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
